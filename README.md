@@ -1,5 +1,7 @@
 # zabbix2opsgenie
-Opsgenie Zabbix integration plugin utilizes full capabilities of Opsgenie and provides bi-directional integration with Zabbix.
+Solução de container como aplicação para rodar isoladamente o script de integração entre Zabbix e OpsGenie.
+
+> Opsgenie Zabbix integration plugin utilizes full capabilities of Opsgenie and provides bi-directional integration with Zabbix.
 
 Esse container foi desenvolvido usando soluções já existentes:
 * OpenJDK
