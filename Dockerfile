@@ -7,8 +7,11 @@ RUN apt-get update && \
     wget ${OPSGENIE_DOWNLOAD} -O opsgenie.deb --no-check-certificate && \
     dpkg -i opsgenie.deb
 
-VOLUME ["/var/log/opsgenie"]
+COPY docker-entrypoint.sh /usr/local/bin/
 
-WORKDIR /etc/opsgenie
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh && \
+    ln -s /usr/local/bin/docker-entrypoint.sh /
 
-ENTRYPOINT ["/etc/opsgenie/zabbix2opsgenie"]
+ENTRYPOINT ["docker-entrypoint.sh"]
+
+CMD ["zabbix2opsgenie"]
